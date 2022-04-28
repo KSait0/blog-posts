@@ -2,7 +2,8 @@ import React from "react";
 import "./index.css";
 import {Link} from "react-router-dom";
 
-function Header() {
+function Header({shown, close}) {
+
     return (
         <header>
             <div className="container">
@@ -13,7 +14,7 @@ function Header() {
                     <Link to="/signin">Авторизация</Link>
                     <Link to="/signup">Регистрация</Link>
                 </nav>
-                <button className="header-btn create-post">Создать пост</button>
+                <button className="header-btn create-post" onClick={() => close(!shown)}>Создать пост</button>
             </div>
         </header> 
     )

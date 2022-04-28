@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import {Link} from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -11,7 +11,7 @@ import {Routes, Route} from "react-router-dom";
 
 
 const App = () => {
-
+    const [popupActive, changePopup] = useState(false);
     return (
         <div className="wrapper">
             <Header />
@@ -27,7 +27,7 @@ const App = () => {
                     </Routes>    
                 </main>
             </div>
-            <Popup />
+            <Popup shown={popupActive} close={changePopup} />
             <Footer />
         </div>
     )

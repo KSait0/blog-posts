@@ -30,15 +30,15 @@ function AllPosts() {
                 </Link>
             ))}
         </div>
-        <div>
-            {posts.map((p, i) => 
-                <Route path={"/"+(i+1)} element={
+        {/* <div>
+            {!posts.err && posts.map((p, i) => 
+                <Route path={"/allposts/"+(i+1)} element={
                     <div className="wrap">
                         {p.map(post =>                                  
                             <Post {...post} key={post._id}/>}
                     </div>}
                 />)}
-        </div>
+        </div> */}
         <div className="pages">
                 {posts.map((p, i) => 
                 <Link to={"/allposts/"+(i+1)} className="page" key={i}>

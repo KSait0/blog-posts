@@ -30,6 +30,7 @@ nav a {
     border-radius: 5px;
     background-color: #2EB300;
     color: white;
+    cursor: pointer;
 }
 
 .header-btn>* {
