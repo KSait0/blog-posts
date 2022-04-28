@@ -1,0 +1,39 @@
+.main-cont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-img {
+    width: 595px;
+    height: 398px;
+    background-image: url(../../../public/main-img.png);
+    background-size: cover;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 1);
+}
+
+.character-img {
+    width: 320px;
+    height: 280px;
+    background-image: url(../../../public/book-character.png);
+    background-size: cover;
+    position: relative;
+    right: 570px;
+    top: 20px;
+}
+
+.main-btn {
+    margin-top: 30px;
+    width: 200px;
+    height: 50px;
+    border: 1px solid #666;
+    border-radius: 5px;
+    background-color: #2EB300;
+}
+
+.main-btn>* {
+    text-decoration: none;
+    font-weight: 400;
+    color: white;
+}

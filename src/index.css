@@ -1,0 +1,43 @@
+@import "../node_modules/normalize.css/normalize.css";
+
+* {
+	box-sizing: inherit;
+	text-decoration: none;
+}
+html {
+	box-sizing: border-box;
+}
+body {
+	font-family: "Nunito", "Arial", "Helvetica", sans-serif;
+	background-image: url(../public/bg.png);
+	background-repeat: repeat;
+	overflow-x: hidden;
+}
+
+/* .wrapper {
+	min-height: 100vh;
+	padding: 50px calc(50% - 992px);
+	box-sizing: border-box;
+} */
+
+.wrapper-content {
+	display: grid;
+    grid-template-areas: "a";
+}
+
+.container {
+	padding: 20px calc(50% - 500px);
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 40px;
+}
+
+main {
+	min-height: 500px;
+	max-width: 992px;
+	width: 95%;
+	/* display: flex;
+	justify-content: center; */
+	grid-area: a;
+    justify-self: center;
+}
