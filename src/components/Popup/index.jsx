@@ -53,7 +53,6 @@ function Popup({shown, close}) {
                             <button className="modal-btn"  
                                 onClick={() => {
                                     console.log(newPost)
-                                    // api.createNewPost()
                             }}>
                                 Создать
                                 

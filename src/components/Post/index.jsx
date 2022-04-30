@@ -1,10 +1,13 @@
 import React from "react";
 import "./index.css";
 
+
+
 class Post extends React.Component {
     constructor(props) {
         super(props);
     }
+
     render() {
         return (
             <div className="post-card">
@@ -37,8 +40,6 @@ class Post extends React.Component {
                 </div>
                 <div className="card-footer">
                     <span className="post-date">{this.props.updated_at}</span>
-                    <button className="post-btn">Редактировать</button>
-                    <button className="post-btn">Удалить</button>
                 </div>
             </div>
         )

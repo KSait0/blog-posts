@@ -13,6 +13,7 @@ const App = () => {
     const [popupActive, changePopup] = useState(false);  
     const [regModalActive, setRegModal] = useState(false);
     const [authModalActive, setAuthModal] = useState(false);
+
     return (
         <div className="wrapper">
             <Header 
@@ -32,6 +33,10 @@ const App = () => {
                         <Route path="/allposts/:page" element={
                             <AllPosts name="Публикации"/>
                         }/> 
+                        <Route path="/allposts/:postId" element={
+                            <AllPosts name="Публикации"/>
+                        }/> 
+
                     </Routes>    
                 </main>
             </div>

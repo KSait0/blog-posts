@@ -46,20 +46,6 @@ class Api {
             }
         }).then(responseHandler);
     }  
-    getAllUsers() {
-        return fetch(`${this.path}/users`, {
-            headers: {
-                authorization: `Bearer ${this.token}`
-            }
-        }).then(responseHandler);
-    }
-    getSingleUser(_id) {
-        return fetch(`${this.path}/users/${_id}`, {
-            headers: {
-                authorization: `Bearer ${this.token}`
-            }
-        }).then(responseHandler);
-    }  
 }
 
 const config = {
