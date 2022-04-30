@@ -1,8 +1,6 @@
 import React, {useState} from "react";
-import {Link} from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import api from "./Api.js";
 import AllPosts from "./components/Allposts";
 import Main from "./components/Main";
 import Popup from "./components/Popup";
@@ -12,26 +10,15 @@ import {Routes, Route} from "react-router-dom";
 
 
 const App = () => {
-    const [popupActive, changePopup] = useState(false);
-    switch (popupActive) {
-        case Popup:
-            return <Popup />
-            break
-        case SignUp:
-            return <SignUp />
-            break
-        case SignIn:
-            return <SignIn />  
-            break    
-    }
-    // const [regModalActive, setRegModal] = useState(false);
-    // const [authModalActive, setAuthModal] = useState(false);
+    const [popupActive, changePopup] = useState(false);  
+    const [regModalActive, setRegModal] = useState(false);
+    const [authModalActive, setAuthModal] = useState(false);
     return (
         <div className="wrapper">
             <Header 
             shown={popupActive} close={changePopup} 
-            // regModalActive={regModalActive} setRegModal={setRegModal}
-            // authModalActive={authModalActive} setAuthModal={setAuthModal}
+            regModalActive={regModalActive} setRegModal={setRegModal}
+            authModalActive={authModalActive} setAuthModal={setAuthModal}
             />
             <div className="wrapper-content">
                 <main>
@@ -50,10 +37,10 @@ const App = () => {
             </div>
             <Popup shown={popupActive} close={changePopup} />
             <SignUp 
-            // regModalActive={regModalActive} setRegModal={setRegModal} 
+            regModalActive={regModalActive} setRegModal={setRegModal} 
             />
             <SignIn 
-            // authModalActive={authModalActive} setAuthModal={setAuthModal} 
+            authModalActive={authModalActive} setAuthModal={setAuthModal} 
             />               
             <Footer />
         </div>

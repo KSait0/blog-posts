@@ -14,12 +14,6 @@ body {
 	overflow-x: hidden;
 }
 
-/* .wrapper {
-	min-height: 100vh;
-	padding: 50px calc(50% - 992px);
-	box-sizing: border-box;
-} */
-
 .wrapper-content {
 	display: grid;
     grid-template-areas: "a";
@@ -36,8 +30,6 @@ main {
 	min-height: 500px;
 	max-width: 992px;
 	width: 95%;
-	/* display: flex;
-	justify-content: center; */
 	grid-area: a;
     justify-self: center;
 }

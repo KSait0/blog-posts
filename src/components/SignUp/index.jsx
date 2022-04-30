@@ -1,9 +1,9 @@
 import React from "react";
 import "./index.css";
 
-function SignUp({shown, close}) {
+function SignUp({regModalActive, setRegModal}) {
     return (
-        <div className={shown ? "modal active" : "modal"}>
+        <div className={regModalActive ? "modal active" : "modal"}>
             <div className="modal-content">
                 <h2>Регистрация</h2>
                 <form>
@@ -14,7 +14,7 @@ function SignUp({shown, close}) {
                     <button className="sign-btn">Зарегистрироваться</button>
                 </form>
             </div>
-            <div className="modal-close" onClick={() => close(false)}>
+            <div className="modal-close" onClick={() => setRegModal(false)}>
                         <i className="fa-solid fa-xmark"/>
             </div>
         </div>

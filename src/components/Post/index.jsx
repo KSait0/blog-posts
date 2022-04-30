@@ -36,13 +36,9 @@ class Post extends React.Component {
                     </div>
                 </div>
                 <div className="card-footer">
-                    <div className="footer-rows">
-                        <div className="like">
-                            <div className="like-btn"></div>
-                            <span className="like-cnt"></span>
-                        </div>
-                        <span className="post-date">{this.props.updated_at}</span>
-                    </div>
+                    <span className="post-date">{this.props.updated_at}</span>
+                    <button className="post-btn">Редактировать</button>
+                    <button className="post-btn">Удалить</button>
                 </div>
             </div>
         )

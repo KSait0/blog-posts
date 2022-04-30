@@ -1,6 +1,5 @@
 .all-posts {
     display: grid;
-    /* grid-template-columns: repeat(3, 1fr); */
 	grid-template-columns: repeat(3, minmax(100px, 1fr));
     gap: 40px;
     align-items: stretch;
