@@ -2,11 +2,12 @@ import React, {useState, useEffect} from 'react';
 import "./index.css";
 import api from "../../Api.js";  
 import Post from "../Post";
-import {Link} from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
 
 function AllPosts() {
     const [posts, getAllPosts] = useState([[]]);
-    const [users, getAllUsers] = useState([{}]);
+    let params = useParams();
+    let page = params.page - 1 || 0;
 
     useEffect(() => {
         api.getAllPosts().then(data => {
@@ -24,21 +25,12 @@ function AllPosts() {
     return (
         <div>
         <div className="all-posts">
-            {!posts.err && posts[0].map((p, _i) => (
+            {!posts.err && posts[page].map((p, _i) => (
                 <Link to={"/posts/" + p._id} key={p._id}>
                     <Post {...p} key={p._id} />  
                 </Link>
             ))}
         </div>
-        {/* <div>
-            {!posts.err && posts.map((p, i) => 
-                <Route path={"/allposts/"+(i+1)} element={
-                    <div className="wrap">
-                        {p.map(post =>                                  
-                            <Post {...post} key={post._id}/>}
-                    </div>}
-                />)}
-        </div> */}
         <div className="pages">
                 {posts.map((p, i) => 
                 <Link to={"/allposts/"+(i+1)} className="page" key={i}>

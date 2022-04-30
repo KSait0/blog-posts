@@ -18,9 +18,11 @@ nav {
     gap: 20px;
 }
 
-nav a {
+nav >* {
     text-decoration: none;
     font-size: 14pt;
+    color: indigo;
+    cursor: pointer;
 }
 
 .header-btn {

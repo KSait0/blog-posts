@@ -6,15 +6,33 @@ import api from "./Api.js";
 import AllPosts from "./components/Allposts";
 import Main from "./components/Main";
 import Popup from "./components/Popup";
-// import Pagination from "./Pagination";
+import SignUp from "./components/SignUp";
+import SignIn from "./components/SignIn";
 import {Routes, Route} from "react-router-dom";
 
 
 const App = () => {
     const [popupActive, changePopup] = useState(false);
+    switch (popupActive) {
+        case Popup:
+            return <Popup />
+            break
+        case SignUp:
+            return <SignUp />
+            break
+        case SignIn:
+            return <SignIn />  
+            break    
+    }
+    // const [regModalActive, setRegModal] = useState(false);
+    // const [authModalActive, setAuthModal] = useState(false);
     return (
         <div className="wrapper">
-            <Header />
+            <Header 
+            shown={popupActive} close={changePopup} 
+            // regModalActive={regModalActive} setRegModal={setRegModal}
+            // authModalActive={authModalActive} setAuthModal={setAuthModal}
+            />
             <div className="wrapper-content">
                 <main>
                     <Routes>
@@ -23,11 +41,20 @@ const App = () => {
                         }/>
                         <Route path="/allposts" element={
                             <AllPosts name="Публикации"/>
-                        }/>
+                        }/> 
+                        <Route path="/allposts/:page" element={
+                            <AllPosts name="Публикации"/>
+                        }/> 
                     </Routes>    
                 </main>
             </div>
             <Popup shown={popupActive} close={changePopup} />
+            <SignUp 
+            // regModalActive={regModalActive} setRegModal={setRegModal} 
+            />
+            <SignIn 
+            // authModalActive={authModalActive} setAuthModal={setAuthModal} 
+            />               
             <Footer />
         </div>
     )

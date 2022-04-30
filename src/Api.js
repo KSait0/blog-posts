@@ -20,12 +20,14 @@ class Api {
                 }
             }).then(responseHandler);
     }
-    createNewPost() {
+    createNewPost(Form) {
         return fetch(`${this.path}/posts`, {
             method: "POST",
             headers: {
-                authorization: `Bearer ${this.token}`
-            }
+                authorization: `Bearer ${this.token}`,
+                "Content-type": "application/json; charset=UTF-8",
+            },
+            body: JSON.stringify(Form)
         }).then(responseHandler);
     }
     editSinglePost(_id) {

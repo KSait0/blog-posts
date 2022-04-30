@@ -3,7 +3,7 @@ import "./index.css";
 import {Link} from "react-router-dom";
 
 function Header({shown, close}) {
-
+// {shown, close}, {regModalActive, setRegModal}, {authModalActive, setAuthModal}
     return (
         <header>
             <div className="container">
@@ -11,8 +11,14 @@ function Header({shown, close}) {
                 <nav>
                     <Link to="/">Главная</Link>
                     <Link to="/allposts">Публикации</Link>
-                    <Link to="/signin">Авторизация</Link>
-                    <Link to="/signup">Регистрация</Link>
+                    <span
+                        // onClick={() => setAuthModal(!authModalActive)}
+                        onClick={() => close(!shown)}
+                     >Авторизация</span>
+                    <span
+                        // onClick={() => setRegModal(!regModalActive)}
+                        onClick={() => close(!shown)}
+                     >Регистрация</span>
                 </nav>
                 <button className="header-btn create-post" onClick={() => close(!shown)}>Создать пост</button>
             </div>
